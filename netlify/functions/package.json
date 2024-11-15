@@ -1,0 +1,10 @@
+{
+  "name": "faq-generator-functions",
+  "version": "1.0.0",
+  "description": "Netlify functions for FAQ generator",
+  "dependencies": {
+    "@sparticuz/chromium": "^109.0.5",
+    "playwright-core": "^1.41.2",
+    "openai": "^3.2.1"
+  }
+}

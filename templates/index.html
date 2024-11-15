@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website FAQ Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Website FAQ Generator</h1>
+        <div class="input-section">
+            <div class="input-group">
+                <div class="url-input-container">
+                    <input type="text" id="urlInput" placeholder="Enter website (e.g., example.com)">
+                    <div class="url-hint">No need to add https:// or www</div>
+                </div>
+                <textarea id="customPrompt" placeholder="Enter custom prompt (e.g., 'Generate technical FAQs' or 'Focus on pricing questions'). Leave empty for default FAQ generation."></textarea>
+            </div>
+            <button onclick="generateFAQ()">Generate FAQ</button>
+        </div>
+        <div id="loading" class="loading hidden">
+            <p>Analyzing website pages...</p>
+            <div class="progress-info">Discovering and scanning pages for comprehensive FAQ generation</div>
+        </div>
+        <div class="content-section">
+            <div id="screenshots" class="screenshots-section hidden">
+                <h2>Website Pages Preview</h2>
+                <div class="screenshots-grid"></div>
+            </div>
+            <div id="result" class="result-section"></div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

@@ -7,4 +7,5 @@ config_name = os.getenv('FLASK_ENV', 'production')
 application.config.from_object(config[config_name])
 
 if __name__ == '__main__':
-    application.run()
+    port = int(os.getenv('PORT', 8000))
+    application.run(host='0.0.0.0', port=port)

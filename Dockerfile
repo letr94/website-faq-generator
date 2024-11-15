@@ -42,9 +42,8 @@ COPY . .
 # Create directory for screenshots
 RUN mkdir -p static/screenshots && chmod 777 static/screenshots
 
-# Expose port
+# Default port (will be overridden by Railway)
 ENV PORT=8000
-EXPOSE 8000
 
 # Start command
-CMD gunicorn --bind :$PORT wsgi:application
+CMD gunicorn --bind 0.0.0.0:$PORT wsgi:application
